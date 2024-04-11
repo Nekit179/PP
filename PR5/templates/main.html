@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Личный профиль</title>
+    <link href="{% static 'css/uikit.min.css' %}" rel="stylesheet">
+    <script src="{% static 'js/uikit.min.js' %}"></script>
+    <script src="{% static 'js/uikit-icons.min.js' %}"></script>
+</head>
+<body>
+    <div class="uk-overlay-primary uk-position-cover"></div>
+    <div class="uk-overlay uk-position-center uk-light">
+     <table>
+         <thead>
+            <tr>
+                <th>User login</th>
+                <th>User password</th>
+            </tr>
+         </thead>
+         <tbody>
+         {% for row in users %}
+         <tr>
+             <th>{{ row.login }}</th>
+             <th>{{ row.password }}</th>
+         </tr>
+         {% endfor %}
+         </tbody>
+     </table>
+    </div>
+</body>
+</html>
