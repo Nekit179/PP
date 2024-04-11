@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Творческие дисциплины</title>
+    <style>
+       .table {
+    width: 100%;
+    border-collapse: collapse;
+         }
+
+       .table th, .table td {
+    border: 1px solid #222;
+    padding: 8px;
+    text-align: left;
+    background-color: #f9f9f9; /* изменяем цвет фона ячеек */
+            }
+       .table th {
+    background-color: #f2f2f2;
+       }
+    </style>
+</head>
+   
+
+<body>
+    <h1>Дисциплины</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Номер</th>
+                <th>Название курса</th>
+                <th>Преподователь</th>
+                <th>Длительность</th>
+                <th>Расписание</th>
+                <th>Стоимость</th>
+                <th>Максимальное количество учеников</th>
+                <th>Минимальный возраст учеников</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cargo in data %}
+            <tr>
+                <td>{{ cargo.0 }}</td>
+                <td>{{ cargo.1 }}</td>
+                <td>{{ cargo.2 }}</td>
+                <td>{{ cargo.3 }}</td>
+                <td>{{ cargo.4 }}</td>
+                <td>{{ cargo.5 }}</td>
+                <td>{{ cargo.6 }}</td>
+                <td>{{ cargo.7 }}</td>
+            </tr>
+            {% endfor %}
+         <a href="/">Выставки</a>
+        </tbody>
+    </table>
+</body>
+</html>
